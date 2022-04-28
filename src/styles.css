@@ -1,3 +1,10 @@
-body {
+:root {
   font-family: sans-serif;
+  font-size: calc(0.875em + 1vw);
+  line-height: 1.2;
+}
+
+/* Fix issue with IE setting diplay inline to main tags */
+main {
+  display: block;
 }
