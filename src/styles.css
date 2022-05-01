@@ -20,13 +20,22 @@ p {
 }
 
 .scroll-top-btn {
+  padding: 0;
   display: none;
-  position: sticky;
-  bottom: 4vh;
-  left: 96vw;
+  position: fixed;
+  height: 3em;
+  width: 3em;
+  bottom: 1em;
+  right: 1em;
   border: none;
   background-color: #808080;
   opacity: 0.8;
+  border-radius: 0.5em;
+}
+
+.scroll-top-btn svg {
+  height: 3em;
+  width: 3em;
 }
 
 .scroll-top-btn.active {
