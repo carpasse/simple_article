@@ -1,5 +1,7 @@
 :root {
-  font-family: sans-serif;
+  --main-font: Helvetica, Arial, sans-serif;
+  --header-font: serif;
+
   font-size: calc(0.875em + 1vw);
   line-height: 1.2;
 }
@@ -7,4 +9,31 @@
 /* Fix issue with IE setting diplay inline to main tags */
 main {
   display: block;
+}
+
+h1 {
+  font-family: var(--header-font);
+}
+
+p {
+  font-family: var(--main-font);
+}
+
+.scroll-top-btn {
+  display: none;
+  position: sticky;
+  bottom: 4vh;
+  left: 96vw;
+  border: none;
+  background-color: #808080;
+  opacity: 0.8;
+}
+
+.scroll-top-btn.active {
+  display: block;
+}
+
+.scroll-top-btn:hover {
+  opacity: 1;
+  cursor: pointer;
 }
