@@ -1,7 +1,7 @@
 import debounce from "lodash.debounce";
 import "./styles.css";
 
-const init = () => {
+const initScrollTopBtn = () => {
   const scrollTopBtn = document.querySelector(".scroll-top-btn");
 
   if (scrollTopBtn) {
@@ -23,6 +23,29 @@ const init = () => {
       }, 150)
     );
   }
+};
+
+const initArticleProgressBar = () => {
+  const articleTag = document.getElementById("page-article");
+  const articleDOMRect = articleTag.getBoundingClientRect();
+  const articleProgressBar = document.querySelector(".article-progress");
+
+  if (articleTag && articleProgressBar) {
+    document.addEventListener("scroll", () => {
+      const articleProgress =
+        Math.ceil(
+          ((window.scrollY + articleDOMRect.top) * 100) / articleDOMRect.height
+        ) + 1;
+
+      console.log("####", `${articleProgress}%`);
+      articleProgressBar.classList.width = `${articleProgress}%`;
+    });
+  }
+};
+
+const init = () => {
+  initScrollTopBtn();
+  initArticleProgressBar();
 };
 
 if (document.readyState === "complete") {
