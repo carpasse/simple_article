@@ -32,13 +32,12 @@ const initArticleProgressBar = () => {
 
   if (articleTag && articleProgressBar) {
     document.addEventListener("scroll", () => {
-      const articleProgress =
-        Math.ceil(
-          ((window.scrollY + articleDOMRect.top) * 100) / articleDOMRect.height
-        ) + 1;
+      const articleProgress = Math.floor(
+        ((window.scrollY + articleDOMRect.top + window.innerHeight) * 100) /
+          articleDOMRect.height
+      );
 
-      console.log("####", `${articleProgress}%`);
-      articleProgressBar.classList.width = `${articleProgress}%`;
+      articleProgressBar.style.width = `${articleProgress}%`;
     });
   }
 };
